@@ -163,16 +163,16 @@ nav.scrolled { border-bottom-color: var(--border-soft); }
 .hero-text-col { display: flex; flex-direction: column; }
 .hero-venn-col { display: flex; justify-content: center; align-items: center; }
 
-/* ─── HERO VENN: 30% bigger (r=218). Draws after intro clears via JS. ─── */
-.hero-venn-svg { width: 100%; height: auto; display: block; }
+/* ─── HERO VENN: original r=168, fills column up to 460px ─── */
+.hero-venn-svg { width: 100%; height: auto; display: block; max-width: 460px; }
 
-/* Circumference of r=218: 2*pi*218 = 1369.8 → 1370 */
+/* Circumference of r=168: 2*pi*168 = 1055.6 → 1056 */
 .hv-left {
-  stroke-dasharray: 1370; stroke-dashoffset: 1370;
+  stroke-dasharray: 1056; stroke-dashoffset: 1056;
   animation: hv-draw 1.8s cubic-bezier(0.4,0,0.2,1) forwards 2.9s;
 }
 .hv-right {
-  stroke-dasharray: 1370; stroke-dashoffset: 1370;
+  stroke-dasharray: 1056; stroke-dashoffset: 1056;
   animation: hv-draw 1.8s cubic-bezier(0.4,0,0.2,1) forwards 3.3s;
 }
 @keyframes hv-draw { to { stroke-dashoffset: 0; } }
@@ -356,9 +356,10 @@ nav.scrolled { border-bottom-color: var(--border-soft); }
   background: var(--card-bg); border: 1px solid var(--border-mid); border-radius: 6px;
   display: flex; align-items: center; justify-content: center;
   transition: border-color 0.4s ease;
+  overflow: hidden;
 }
 .tl-item.tl-active .tl-icon-card { border-color: rgba(90,158,111,0.22); }
-.tl-svg { width: 56px; height: 56px; }
+.tl-svg { width: 56px; height: 56px; flex-shrink: 0; }
 [data-tl="0"] .tl-svg { width: 64px; height: 52px; }
 .tl-text { flex: 1; padding-top: 4px; }
 .tl-title { font-size: 20px; font-weight: 600; color: var(--text-primary); margin-bottom: 10px; letter-spacing: -0.02em; }
