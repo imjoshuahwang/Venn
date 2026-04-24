@@ -10,7 +10,7 @@
   <meta property="og:url" content="https://joinvenn.org">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://joinvenn.org/images/og.png">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='12' cy='16' r='10' fill='%232D5A3D'/><circle cx='20' cy='16' r='10' fill='%23111' opacity='0.9'/><ellipse cx='16' cy='16' rx='3.5' ry='6.5' fill='%235A9E6F' opacity='0.9'/></svg>">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='12' cy='16' r='10' fill='%232D5A3D'/><circle cx='20' cy='16' r='10' fill='none' stroke='%23EDEAE4' stroke-width='0.8' opacity='0.4'/><ellipse cx='16' cy='16' rx='3.5' ry='6.5' fill='%235A9E6F' opacity='0.9'/></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,800;1,400&display=swap" rel="stylesheet">
@@ -18,20 +18,7 @@
 </head>
 <body>
 
-  <!-- EXIT FADE -->
   <div id="exit-overlay"></div>
-
-  <!-- INTRO OVERLAY -->
-  <div id="intro-overlay">
-    <div class="intro-content">
-      <svg class="intro-svg" viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg">
-        <circle class="ic-left" cx="80" cy="80" r="52" fill="none" stroke="#5A9E6F" stroke-width="1.2"/>
-        <circle class="ic-right" cx="120" cy="80" r="52" fill="none" stroke="#EDEAE4" stroke-width="1.2" opacity="0.35"/>
-      </svg>
-      <div class="intro-wordmark">Venn</div>
-    </div>
-  </div>
-
   <div class="cursor-glow" id="cursorGlow"></div>
 
   <!-- NAV -->
@@ -40,7 +27,7 @@
       <a class="nav-logo" href="#hero" aria-label="Venn">
         <svg width="112" height="34" viewBox="0 0 112 34" fill="none" xmlns="http://www.w3.org/2000/svg">
           <circle cx="13" cy="17" r="13" fill="#2D5A3D"/>
-          <circle cx="24" cy="17" r="13" fill="#111111" fill-opacity="0.92"/>
+          <circle cx="24" cy="17" r="12.4" fill="none" stroke="#EDEAE4" stroke-width="0.9" opacity="0.3"/>
           <ellipse cx="18.5" cy="17" rx="5.2" ry="9.1" fill="#5A9E6F" fill-opacity="0.92"/>
           <text x="44" y="23.5" font-family="Geist, sans-serif" font-weight="600" font-size="19" fill="#EDEAE4" letter-spacing="-0.03em">Venn</text>
         </svg>
@@ -53,46 +40,55 @@
     </div>
   </nav>
 
-  <!-- HERO -->
+  <!-- HERO: two-column grid so venn sits right next to text -->
   <section id="hero">
-    <!-- Orbs in own wrapper so hero has no overflow:hidden, allowing sticky/parallax -->
     <div class="hero-orbs">
       <div class="hero-orb hero-orb-1"></div>
       <div class="hero-orb hero-orb-2"></div>
     </div>
 
-    <!-- Villain line is direct flex child of hero for parallax effect -->
-    <p class="villain-line reveal-up" style="--delay:0s">Most student founders spend months going nowhere.</p>
+    <div class="hero-grid">
+      <!-- TEXT COLUMN -->
+      <div class="hero-text-col">
+        <p class="villain-line reveal-up" style="--delay:0.1s">Most student founders spend months going nowhere.</p>
+        <p class="section-label reveal-up" style="--delay:0.18s">THE NONPROFIT CONNECTOR</p>
+        <h1 class="hero-headline">
+          <span class="h-line reveal-up" style="--delay:0.26s">The network that connects</span>
+          <span class="h-line reveal-up" style="--delay:0.34s">student nonprofits <em>to the world.</em></span>
+        </h1>
+        <p class="hero-body reveal-up" style="--delay:0.44s">
+          Warm introductions, real connections, completely free, across a network touching 87,500+ people and counting.
+        </p>
+        <div class="hero-links reveal-up" style="--delay:0.52s">
+          <a href="https://forms.gle/WHbpBagtNftHLYLF6" target="_blank" rel="noopener" class="hero-link ext-link">
+            <span>Get your first intro.</span>
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1.5 9.5L9.5 1.5M9.5 1.5H3.5M9.5 1.5V7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <div class="hero-divider"></div>
+          <a href="https://forms.gle/Qwu5eiVhTNuhVNpr7" target="_blank" rel="noopener" class="hero-link ext-link">
+            <span>Apply as a partner.</span>
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1.5 9.5L9.5 1.5M9.5 1.5H3.5M9.5 1.5V7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
 
-    <div class="hero-inner">
-      <p class="section-label reveal-up" style="--delay:0.08s">THE NONPROFIT CONNECTOR</p>
-      <h1 class="hero-headline">
-        <span class="h-line reveal-up" style="--delay:0.17s">The network that connects</span>
-        <span class="h-line reveal-up" style="--delay:0.26s">student nonprofits <em>to the world.</em></span>
-      </h1>
-      <p class="hero-body reveal-up" style="--delay:0.35s">
-        Warm introductions, real connections, completely free, across a network touching 87,500+ people and counting.
-      </p>
-      <div class="hero-links reveal-up" style="--delay:0.44s">
-        <a href="https://forms.gle/WHbpBagtNftHLYLF6" target="_blank" rel="noopener" class="hero-link ext-link">
-          <span>Get your first intro.</span>
-          <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1.5 9.5L9.5 1.5M9.5 1.5H3.5M9.5 1.5V7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-        <div class="hero-divider"></div>
-        <a href="https://forms.gle/Qwu5eiVhTNuhVNpr7" target="_blank" rel="noopener" class="hero-link ext-link">
-          <span>Apply as a partner.</span>
-          <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1.5 9.5L9.5 1.5M9.5 1.5H3.5M9.5 1.5V7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
+      <!-- VENN COLUMN: draws immediately via CSS animation, no JS delay -->
+      <div class="hero-venn-col">
+        <svg class="hero-venn-svg" viewBox="0 0 480 420" xmlns="http://www.w3.org/2000/svg">
+          <circle class="hv-left" cx="190" cy="210" r="168" fill="rgba(45,90,61,0.08)" stroke="#5A9E6F" stroke-width="1"/>
+          <circle class="hv-right" cx="310" cy="210" r="168" fill="none" stroke="#EDEAE4" stroke-width="1" opacity="0.18"/>
+          <defs><clipPath id="hv-clip"><circle cx="190" cy="210" r="168"/></clipPath></defs>
+          <circle class="hv-intersect" cx="310" cy="210" r="168" fill="rgba(90,158,111,0.07)" clip-path="url(#hv-clip)"/>
+        </svg>
       </div>
     </div>
 
-    <!-- PULSING ACCENT LINE -->
-    <div class="hero-pulse-wrap reveal-up" style="--delay:0.58s">
+    <div class="hero-pulse-wrap reveal-up" style="--delay:0.62s">
       <div class="pulse-line"></div>
       <div class="pulse-dot"></div>
     </div>
 
-    <div class="scroll-cue reveal-up" style="--delay:0.64s">
+    <div class="scroll-cue reveal-up" style="--delay:0.7s">
       <div class="scroll-line"></div>
     </div>
   </section>
@@ -122,107 +118,153 @@
     </div>
   </section>
 
-  <!-- LOGO STRIP -->
+  <!-- TRUSTED BY: logos go in logos/ folder at repo root -->
   <section id="trusted">
     <p class="section-label scroll-reveal" style="text-align:center;margin-bottom:52px">TRUSTED BY</p>
     <div class="logo-grid scroll-reveal" style="--sd:0.1s">
-      <a href="#" class="logo-item"><img src="logos/Totals-Logo.png" alt="TOTALS Life Skills"></a>
-      <a href="#" class="logo-item"><img src="logos/YouthxAI-Logo.png" alt="YouthxAI"></a>
-      <a href="#" class="logo-item"><img src="logos/SCVMUN-Logo.png" alt="SCVMUN"></a>
-      <a href="#" class="logo-item"><img src="logos/Care-Logo.png" alt="CARE"></a>
-      <a href="#" class="logo-item"><img src="logos/AIM-Logo.png" alt="AIM Youth Mental Health"></a>
-      <a href="#" class="logo-item"><img src="logos/Phase-Initiative-Logo.png" alt="The Phase Initiative"></a>
-      <a href="#" class="logo-item"><img src="logos/Neuroconnect-Logo.png" alt="NeuroConnect"></a>
-      <a href="#" class="logo-item"><img src="logos/Saintly-Logo.png" alt="Saintly"></a>
+      <a href="#" class="logo-item"><img src="Totals-Logo.png" alt="TOTALS Life Skills" onerror="this.closest('.logo-item').style.display='none'"></a>
+      <a href="#" class="logo-item"><img src="YouthxAI-Logo.png" alt="YouthxAI" onerror="this.closest('.logo-item').style.display='none'"></a>
+      <a href="#" class="logo-item"><img src="SCVMUN-Logo.png" alt="SCVMUN" onerror="this.closest('.logo-item').style.display='none'"></a>
+      <a href="#" class="logo-item"><img src="Care-Logo.png" alt="CARE" onerror="this.closest('.logo-item').style.display='none'"></a>
+      <a href="#" class="logo-item"><img src="AIM-Logo.png" alt="AIM Youth Mental Health" onerror="this.closest('.logo-item').style.display='none'"></a>
+      <a href="#" class="logo-item"><img src="Phase-Initiative-Logo.png" alt="The Phase Initiative" onerror="this.closest('.logo-item').style.display='none'"></a>
+      <a href="#" class="logo-item"><img src="Neuroconnect-Logo.png" alt="NeuroConnect" onerror="this.closest('.logo-item').style.display='none'"></a>
+      <a href="#" class="logo-item"><img src="Saintly-Logo.png" alt="Saintly" onerror="this.closest('.logo-item').style.display='none'"></a>
     </div>
   </section>
 
-  <!-- TESTIMONIAL -->
-  <section id="testimonial">
-    <div class="testimonial-inner scroll-reveal">
-      <div class="testimonial-mark">"</div>
-      <blockquote class="testimonial-text">
-        The most engaged student program I have seen come through this library. Joshua and his team are the real thing.
-      </blockquote>
-      <div class="testimonial-attr">
-        <div class="testimonial-dot"></div>
-        <span class="testimonial-name">Kimberley Chan</span>
-        <span class="testimonial-sep">—</span>
-        <span class="testimonial-role">Branch Librarian, San Jose Public Library</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- TYPOGRAPHIC MOMENT: Free. left-offset with bullets -->
+  <!-- TYPOGRAPHIC MOMENT -->
   <section id="type-moment">
     <div class="type-inner scroll-reveal">
-      <div class="type-left">
-        <span class="type-big">Free.</span>
-      </div>
-      <div class="type-right">
-        <ul class="type-bullets">
-          <li>Only a connector, never a fee.</li>
-          <li>No hidden costs, ever.</li>
-          <li>An act of common good.</li>
-        </ul>
-      </div>
+      <span class="type-big">Free.</span>
+      <p class="type-sub">Not a grant. Not a program.<br>Just the intro you needed.</p>
     </div>
   </section>
 
-  <!-- HOW IT WORKS -->
+  <!-- HOW IT WORKS: 4-step vertical timeline -->
   <section id="how-it-works">
     <div class="how-inner">
-      <div class="how-top">
-        <div class="how-left">
-          <p class="section-label scroll-reveal">HOW IT WORKS</p>
-          <h2 class="how-heading scroll-reveal" style="--sd:0.08s">Three steps.<br>One intro.<br>Real traction.</h2>
-        </div>
-        <div class="how-right scroll-reveal" style="--sd:0.14s">
-          <!-- Larger viewBox, node proportions improved -->
-          <svg class="process-svg" viewBox="0 0 380 130" xmlns="http://www.w3.org/2000/svg">
-            <rect class="svg-node n1" x="2" y="44" width="96" height="42" rx="4"/>
-            <text class="svg-label" x="50" y="67">Fill Form</text>
-            <line class="svg-arrow a1" x1="99" y1="65" x2="135" y2="65"/>
-            <polyline class="svg-head h1" points="129,59 135,65 129,71"/>
-            <rect class="svg-node n2" x="137" y="44" width="106" height="42" rx="4"/>
-            <text class="svg-label" x="190" y="67">Venn Matches</text>
-            <line class="svg-arrow a2" x1="244" y1="65" x2="272" y2="65"/>
-            <polyline class="svg-head h2" points="266,59 272,65 266,71"/>
-            <rect class="svg-node svg-node-accent n3" x="274" y="44" width="104" height="42" rx="4"/>
-            <text class="svg-label svg-label-accent" x="326" y="67">Warm Intro</text>
-          </svg>
-        </div>
+      <div class="how-header">
+        <p class="section-label scroll-reveal">HOW IT WORKS</p>
+        <h2 class="how-heading scroll-reveal" style="--sd:0.1s">From first contact<br>to first intro.</h2>
+        <p class="how-sub scroll-reveal" style="--sd:0.2s">Four moments. Under a week.</p>
       </div>
-      <div class="steps-row">
-        <div class="step scroll-reveal" style="--sd:0s">
-          <div class="step-top">
-            <span class="step-number">01</span>
-            <div class="step-line-el"></div>
+
+      <div class="timeline">
+        <div class="tl-track"><div class="tl-track-fill" id="tlFill"></div></div>
+
+        <!-- STEP 1: ENVELOPE -->
+        <div class="tl-item" data-tl="0">
+          <div class="tl-sidebar">
+            <span class="tl-num">01</span>
+            <div class="tl-dot"></div>
           </div>
-          <h3 class="step-title">Fill out a short form.</h3>
-          <p class="step-body">Tell us who you are and what you are working on.</p>
-        </div>
-        <div class="step scroll-reveal" style="--sd:0.12s">
-          <div class="step-top">
-            <span class="step-number">02</span>
-            <div class="step-line-el"></div>
+          <div class="tl-content">
+            <div class="tl-icon-card">
+              <svg viewBox="0 0 80 64" fill="none" xmlns="http://www.w3.org/2000/svg" class="tl-svg">
+                <!-- Envelope body: perimeter ≈ 235 -->
+                <rect x="4" y="8" width="72" height="48" rx="3" stroke="#2A2A2A" stroke-width="1.2" style="--dl:235" class="tl-icon-draw"/>
+                <!-- V-flap in accent: polyline length ≈ 91 -->
+                <polyline points="4,8 40,36 76,8" stroke="#5A9E6F" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" style="--dl:91" class="tl-icon-draw tl-accent"/>
+                <!-- Static body lines -->
+                <line x1="18" y1="44" x2="42" y2="44" stroke="#1C1C1C" stroke-width="1"/>
+                <line x1="18" y1="50" x2="34" y2="50" stroke="#1C1C1C" stroke-width="1"/>
+              </svg>
+            </div>
+            <div class="tl-text">
+              <h3 class="tl-title">You reach out.</h3>
+              <p class="tl-body">Fill out a short form and tell us who you are, what you are building, and what a good introduction looks like for you.</p>
+            </div>
           </div>
-          <h3 class="step-title">We find your match.</h3>
-          <p class="step-body">Not a cold email to a stranger. A warm introduction to someone who already wants to hear from you.</p>
         </div>
-        <div class="step scroll-reveal" style="--sd:0.24s">
-          <div class="step-top">
-            <span class="step-number">03</span>
-            <div class="step-line-el"></div>
+
+        <!-- STEP 2: DOCUMENT/FORM -->
+        <div class="tl-item" data-tl="1">
+          <div class="tl-sidebar">
+            <span class="tl-num">02</span>
+            <div class="tl-dot"></div>
           </div>
-          <h3 class="step-title">You get to work.</h3>
-          <p class="step-body">A structured first call and one concrete thing to do together in the next 30 days.</p>
+          <div class="tl-content">
+            <div class="tl-icon-card">
+              <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" class="tl-svg">
+                <!-- Document body: perimeter ≈ 235 -->
+                <rect x="14" y="6" width="52" height="68" rx="3" stroke="#2A2A2A" stroke-width="1.2" style="--dl:235" class="tl-icon-draw"/>
+                <!-- Static field lines -->
+                <line x1="22" y1="22" x2="58" y2="22" stroke="#3A3A3A" stroke-width="1.5"/>
+                <line x1="22" y1="36" x2="58" y2="36" stroke="#242424" stroke-width="1"/>
+                <line x1="22" y1="48" x2="58" y2="48" stroke="#242424" stroke-width="1"/>
+                <!-- Accent field line draws in: length=22 -->
+                <line x1="22" y1="60" x2="44" y2="60" stroke="#5A9E6F" stroke-width="1.2" style="--dl:22" class="tl-icon-draw tl-accent"/>
+                <!-- Cursor -->
+                <rect x="45" y="56" width="2" height="8" rx="0.5" fill="#5A9E6F" class="tl-cursor"/>
+              </svg>
+            </div>
+            <div class="tl-text">
+              <h3 class="tl-title">We review your story.</h3>
+              <p class="tl-body">Not a database query. We read what you wrote and think about who in our network would actually change things for you.</p>
+            </div>
+          </div>
         </div>
+
+        <!-- STEP 3: VENN CONNECTION -->
+        <div class="tl-item" data-tl="2">
+          <div class="tl-sidebar">
+            <span class="tl-num">03</span>
+            <div class="tl-dot"></div>
+          </div>
+          <div class="tl-content">
+            <div class="tl-icon-card">
+              <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" class="tl-svg">
+                <defs><clipPath id="tl-venn-clip"><circle cx="30" cy="40" r="22"/></clipPath></defs>
+                <!-- Left circle: circumference ≈ 138 -->
+                <circle cx="30" cy="40" r="22" fill="rgba(45,90,61,0.15)" stroke="#5A9E6F" stroke-width="1.2" style="--dl:138" class="tl-icon-draw tl-accent"/>
+                <!-- Right circle: circumference ≈ 138 -->
+                <circle cx="50" cy="40" r="22" fill="none" stroke="#2A2A2A" stroke-width="1.2" style="--dl:138" class="tl-icon-draw"/>
+                <!-- Intersection fill -->
+                <circle cx="50" cy="40" r="22" fill="rgba(90,158,111,0.15)" clip-path="url(#tl-venn-clip)"/>
+              </svg>
+            </div>
+            <div class="tl-text">
+              <h3 class="tl-title">Venn makes the match.</h3>
+              <p class="tl-body">Not a cold email to a stranger. A warm introduction to someone who already wants to hear from you, with a structured first call ready to go.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 4: CALENDAR/DONE -->
+        <div class="tl-item" data-tl="3">
+          <div class="tl-sidebar">
+            <span class="tl-num">04</span>
+            <div class="tl-dot"></div>
+          </div>
+          <div class="tl-content">
+            <div class="tl-icon-card">
+              <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" class="tl-svg">
+                <!-- Calendar body: perimeter ≈ 227 -->
+                <rect x="10" y="14" width="60" height="56" rx="3" stroke="#2A2A2A" stroke-width="1.2" style="--dl:227" class="tl-icon-draw"/>
+                <!-- Header fill (static) -->
+                <rect x="10" y="14" width="60" height="18" rx="3" fill="rgba(90,158,111,0.08)"/>
+                <!-- Header line -->
+                <line x1="10" y1="32" x2="70" y2="32" stroke="#1C1C1C" stroke-width="1"/>
+                <!-- Calendar hooks (static) -->
+                <line x1="26" y1="10" x2="26" y2="20" stroke="#2A2A2A" stroke-width="1.5"/>
+                <line x1="54" y1="10" x2="54" y2="20" stroke="#2A2A2A" stroke-width="1.5"/>
+                <!-- Checkmark: total length ≈ 43 -->
+                <polyline points="26,50 36,60 56,40" fill="none" stroke="#5A9E6F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="--dl:43" class="tl-icon-draw tl-accent"/>
+              </svg>
+            </div>
+            <div class="tl-text">
+              <h3 class="tl-title">You get to work.</h3>
+              <p class="tl-body">Your first meeting, one concrete thing to do together in the next 30 days, and a network that keeps growing from there.</p>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- JOIN: stagger-group for per-element reveal -->
+  <!-- JOIN -->
   <section id="join">
     <div class="join-inner">
       <div class="join-col stagger-group">
@@ -252,7 +294,7 @@
       <a class="nav-logo" href="#hero" aria-label="Venn" style="opacity:0.45">
         <svg width="88" height="27" viewBox="0 0 112 34" fill="none" xmlns="http://www.w3.org/2000/svg">
           <circle cx="13" cy="17" r="13" fill="#2D5A3D"/>
-          <circle cx="24" cy="17" r="13" fill="#111111" fill-opacity="0.92"/>
+          <circle cx="24" cy="17" r="12.4" fill="none" stroke="#EDEAE4" stroke-width="0.9" opacity="0.3"/>
           <ellipse cx="18.5" cy="17" rx="5.2" ry="9.1" fill="#5A9E6F" fill-opacity="0.92"/>
           <text x="44" y="23.5" font-family="Geist, sans-serif" font-weight="600" font-size="19" fill="#EDEAE4" letter-spacing="-0.03em">Venn</text>
         </svg>
