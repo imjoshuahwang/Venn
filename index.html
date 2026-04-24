@@ -3,32 +3,51 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Venn, the Nonprofit Connector</title>
-  <meta name="description" content="A warm introduction and connection network for high school students running nonprofits. Completely free. Touching 80,000 people and counting.">
+  <title>Venn — Get your first warm intro in under a week</title>
+  <meta name="description" content="Most student founders spend months going nowhere. Venn connects you directly to the right people, completely free.">
+  <meta property="og:title" content="Venn — Get your first warm intro in under a week">
+  <meta property="og:description" content="Most student founders spend months going nowhere. Venn connects you directly to the right people, completely free.">
+  <meta property="og:url" content="https://joinvenn.org">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://joinvenn.org/images/og.png">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='12' cy='16' r='10' fill='%232D5A3D'/><circle cx='20' cy='16' r='10' fill='%23111' opacity='0.9'/><ellipse cx='16' cy='16' rx='3.5' ry='6.5' fill='%235A9E6F' opacity='0.9'/></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,800;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div class="grain"></div>
+  <!-- EXIT FADE -->
+  <div id="exit-overlay"></div>
+
+  <!-- INTRO OVERLAY -->
+  <div id="intro-overlay">
+    <div class="intro-content">
+      <svg class="intro-svg" viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg">
+        <circle class="ic-left" cx="80" cy="80" r="52" fill="none" stroke="#5A9E6F" stroke-width="1.2"/>
+        <circle class="ic-right" cx="120" cy="80" r="52" fill="none" stroke="#EDEAE4" stroke-width="1.2" opacity="0.35"/>
+      </svg>
+      <div class="intro-wordmark">Venn</div>
+    </div>
+  </div>
+
   <div class="cursor-glow" id="cursorGlow"></div>
 
   <!-- NAV -->
   <nav id="nav">
     <div class="nav-inner">
       <a class="nav-logo" href="#hero" aria-label="Venn">
-        <svg width="90" height="28" viewBox="0 0 90 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="10" cy="14" r="10" fill="#2D5A3D"/>
-          <circle cx="18" cy="14" r="10" fill="#111111" fill-opacity="0.9"/>
-          <ellipse cx="14" cy="14" rx="4.2" ry="7.4" fill="#5A9E6F" fill-opacity="0.9"/>
-          <text x="34" y="19.5" font-family="Geist, sans-serif" font-weight="600" font-size="16" fill="#EDEAE4" letter-spacing="-0.03em">Venn</text>
+        <svg width="112" height="34" viewBox="0 0 112 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="13" cy="17" r="13" fill="#2D5A3D"/>
+          <circle cx="24" cy="17" r="13" fill="#111111" fill-opacity="0.92"/>
+          <ellipse cx="18.5" cy="17" rx="5.2" ry="9.1" fill="#5A9E6F" fill-opacity="0.92"/>
+          <text x="44" y="23.5" font-family="Geist, sans-serif" font-weight="600" font-size="19" fill="#EDEAE4" letter-spacing="-0.03em">Venn</text>
         </svg>
       </a>
       <div class="nav-links">
-        <a href="#how-it-works">How it works</a>
-        <a href="#join">Join</a>
+        <a href="#how-it-works" data-section="how-it-works">How it works</a>
+        <a href="#join" data-section="join">Join</a>
       </div>
       <a class="nav-cta" href="#join">Get connected.</a>
     </div>
@@ -36,41 +55,58 @@
 
   <!-- HERO -->
   <section id="hero">
-    <div class="hero-orb hero-orb-1"></div>
-    <div class="hero-orb hero-orb-2"></div>
+    <!-- Orbs in own wrapper so hero has no overflow:hidden, allowing sticky/parallax -->
+    <div class="hero-orbs">
+      <div class="hero-orb hero-orb-1"></div>
+      <div class="hero-orb hero-orb-2"></div>
+    </div>
+
+    <!-- Villain line is direct flex child of hero for parallax effect -->
+    <p class="villain-line reveal-up" style="--delay:0s">Most student founders spend months going nowhere.</p>
+
     <div class="hero-inner">
-      <div class="reveal-up" style="--delay:0s">
-        <p class="section-label">THE NONPROFIT CONNECTOR</p>
-      </div>
+      <p class="section-label reveal-up" style="--delay:0.08s">THE NONPROFIT CONNECTOR</p>
       <h1 class="hero-headline">
-        <span class="h-line reveal-up" style="--delay:0.09s">The network that connects</span>
-        <span class="h-line reveal-up" style="--delay:0.18s">student nonprofits <em>to the world.</em></span>
+        <span class="h-line reveal-up" style="--delay:0.17s">The network that connects</span>
+        <span class="h-line reveal-up" style="--delay:0.26s">student nonprofits <em>to the world.</em></span>
       </h1>
-      <p class="hero-body reveal-up" style="--delay:0.28s">
-        Most student nonprofits plateau because the right people are out of reach. Venn changes that. Warm introductions, real connections, completely free, across a network touching 80,000 people and counting.
+      <p class="hero-body reveal-up" style="--delay:0.35s">
+        Warm introductions, real connections, completely free, across a network touching 87,500+ people and counting.
       </p>
-      <div class="hero-links reveal-up" style="--delay:0.38s">
-        <a href="https://forms.gle/WHbpBagtNftHLYLF6" target="_blank" rel="noopener" class="hero-link">
-          <span>I run a student nonprofit.</span>
+      <div class="hero-links reveal-up" style="--delay:0.44s">
+        <a href="https://forms.gle/WHbpBagtNftHLYLF6" target="_blank" rel="noopener" class="hero-link ext-link">
+          <span>Get your first intro.</span>
           <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1.5 9.5L9.5 1.5M9.5 1.5H3.5M9.5 1.5V7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
         <div class="hero-divider"></div>
-        <a href="https://forms.gle/Qwu5eiVhTNuhVNpr7" target="_blank" rel="noopener" class="hero-link">
-          <span>I work with student nonprofits.</span>
+        <a href="https://forms.gle/Qwu5eiVhTNuhVNpr7" target="_blank" rel="noopener" class="hero-link ext-link">
+          <span>Apply as a partner.</span>
           <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1.5 9.5L9.5 1.5M9.5 1.5H3.5M9.5 1.5V7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
       </div>
     </div>
-    <div class="scroll-cue reveal-up" style="--delay:0.55s">
+
+    <!-- PULSING ACCENT LINE -->
+    <div class="hero-pulse-wrap reveal-up" style="--delay:0.58s">
+      <div class="pulse-line"></div>
+      <div class="pulse-dot"></div>
+    </div>
+
+    <div class="scroll-cue reveal-up" style="--delay:0.64s">
       <div class="scroll-line"></div>
     </div>
+  </section>
+
+  <!-- CHAPTER BREAK -->
+  <section id="chapter-break">
+    <p class="chapter-text scroll-reveal">The right intro changes everything.</p>
   </section>
 
   <!-- STATS -->
   <section id="stats">
     <div class="stats-inner">
       <div class="stat-item scroll-reveal">
-        <span class="stat-big"><span class="count" data-target="80000">0</span>+</span>
+        <span class="stat-big"><span class="count" data-target="87500">0</span>+</span>
         <span class="stat-label">People in the network</span>
       </div>
       <div class="stat-divider"></div>
@@ -88,27 +124,47 @@
 
   <!-- LOGO STRIP -->
   <section id="trusted">
-    <p class="section-label scroll-reveal" style="text-align:center">TRUSTED BY</p>
-    <div class="logo-track-wrapper">
-      <div class="logo-fade-left"></div>
-      <div class="logo-fade-right"></div>
-      <div class="logo-track" id="logoTrack">
-        <a href="#" class="logo-item"><img src="logos/Totals-Logo.png" alt="TOTALS Life Skills"></a>
-        <a href="#" class="logo-item"><img src="logos/YouthxAI-Logo.png" alt="YouthxAI"></a>
-        <a href="#" class="logo-item"><img src="logos/SCVMUN-Logo.png" alt="SCVMUN"></a>
-        <a href="#" class="logo-item"><img src="logos/Care-Logo.png" alt="CARE"></a>
-        <a href="#" class="logo-item"><img src="logos/AIM-Logo.png" alt="AIM Youth Mental Health"></a>
-        <a href="#" class="logo-item"><img src="logos/Phase-Initiative-Logo.png" alt="The Phase Initiative"></a>
-        <a href="#" class="logo-item"><img src="logos/Neuroconnect-Logo.png" alt="NeuroConnect"></a>
-        <a href="#" class="logo-item"><img src="logos/Saintly-Logo.png" alt="Saintly"></a>
-        <a href="#" class="logo-item" aria-hidden="true"><img src="logos/Totals-Logo.png" alt=""></a>
-        <a href="#" class="logo-item" aria-hidden="true"><img src="logos/YouthxAI-Logo.png" alt=""></a>
-        <a href="#" class="logo-item" aria-hidden="true"><img src="logos/SCVMUN-Logo.png" alt=""></a>
-        <a href="#" class="logo-item" aria-hidden="true"><img src="logos/Care-Logo.png" alt=""></a>
-        <a href="#" class="logo-item" aria-hidden="true"><img src="logos/AIM-Logo.png" alt=""></a>
-        <a href="#" class="logo-item" aria-hidden="true"><img src="logos/Phase-Initiative-Logo.png" alt=""></a>
-        <a href="#" class="logo-item" aria-hidden="true"><img src="logos/Neuroconnect-Logo.png" alt=""></a>
-        <a href="#" class="logo-item" aria-hidden="true"><img src="logos/Saintly-Logo.png" alt=""></a>
+    <p class="section-label scroll-reveal" style="text-align:center;margin-bottom:52px">TRUSTED BY</p>
+    <div class="logo-grid scroll-reveal" style="--sd:0.1s">
+      <a href="#" class="logo-item"><img src="logos/Totals-Logo.png" alt="TOTALS Life Skills"></a>
+      <a href="#" class="logo-item"><img src="logos/YouthxAI-Logo.png" alt="YouthxAI"></a>
+      <a href="#" class="logo-item"><img src="logos/SCVMUN-Logo.png" alt="SCVMUN"></a>
+      <a href="#" class="logo-item"><img src="logos/Care-Logo.png" alt="CARE"></a>
+      <a href="#" class="logo-item"><img src="logos/AIM-Logo.png" alt="AIM Youth Mental Health"></a>
+      <a href="#" class="logo-item"><img src="logos/Phase-Initiative-Logo.png" alt="The Phase Initiative"></a>
+      <a href="#" class="logo-item"><img src="logos/Neuroconnect-Logo.png" alt="NeuroConnect"></a>
+      <a href="#" class="logo-item"><img src="logos/Saintly-Logo.png" alt="Saintly"></a>
+    </div>
+  </section>
+
+  <!-- TESTIMONIAL -->
+  <section id="testimonial">
+    <div class="testimonial-inner scroll-reveal">
+      <div class="testimonial-mark">"</div>
+      <blockquote class="testimonial-text">
+        The most engaged student program I have seen come through this library. Joshua and his team are the real thing.
+      </blockquote>
+      <div class="testimonial-attr">
+        <div class="testimonial-dot"></div>
+        <span class="testimonial-name">Kimberley Chan</span>
+        <span class="testimonial-sep">—</span>
+        <span class="testimonial-role">Branch Librarian, San Jose Public Library</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- TYPOGRAPHIC MOMENT: Free. left-offset with bullets -->
+  <section id="type-moment">
+    <div class="type-inner scroll-reveal">
+      <div class="type-left">
+        <span class="type-big">Free.</span>
+      </div>
+      <div class="type-right">
+        <ul class="type-bullets">
+          <li>Only a connector, never a fee.</li>
+          <li>No hidden costs, ever.</li>
+          <li>An act of common good.</li>
+        </ul>
       </div>
     </div>
   </section>
@@ -116,9 +172,26 @@
   <!-- HOW IT WORKS -->
   <section id="how-it-works">
     <div class="how-inner">
-      <div class="how-header">
-        <p class="section-label scroll-reveal">HOW IT WORKS</p>
-        <h2 class="how-heading scroll-reveal" style="--sd:0.08s">Three steps from form<br>to first introduction.</h2>
+      <div class="how-top">
+        <div class="how-left">
+          <p class="section-label scroll-reveal">HOW IT WORKS</p>
+          <h2 class="how-heading scroll-reveal" style="--sd:0.08s">Three steps.<br>One intro.<br>Real traction.</h2>
+        </div>
+        <div class="how-right scroll-reveal" style="--sd:0.14s">
+          <!-- Larger viewBox, node proportions improved -->
+          <svg class="process-svg" viewBox="0 0 380 130" xmlns="http://www.w3.org/2000/svg">
+            <rect class="svg-node n1" x="2" y="44" width="96" height="42" rx="4"/>
+            <text class="svg-label" x="50" y="67">Fill Form</text>
+            <line class="svg-arrow a1" x1="99" y1="65" x2="135" y2="65"/>
+            <polyline class="svg-head h1" points="129,59 135,65 129,71"/>
+            <rect class="svg-node n2" x="137" y="44" width="106" height="42" rx="4"/>
+            <text class="svg-label" x="190" y="67">Venn Matches</text>
+            <line class="svg-arrow a2" x1="244" y1="65" x2="272" y2="65"/>
+            <polyline class="svg-head h2" points="266,59 272,65 266,71"/>
+            <rect class="svg-node svg-node-accent n3" x="274" y="44" width="104" height="42" rx="4"/>
+            <text class="svg-label svg-label-accent" x="326" y="67">Warm Intro</text>
+          </svg>
+        </div>
       </div>
       <div class="steps-row">
         <div class="step scroll-reveal" style="--sd:0s">
@@ -127,7 +200,7 @@
             <div class="step-line-el"></div>
           </div>
           <h3 class="step-title">Fill out a short form.</h3>
-          <p class="step-body">Tell us who you are and what you are working on. Ten questions, takes about four minutes.</p>
+          <p class="step-body">Tell us who you are and what you are working on.</p>
         </div>
         <div class="step scroll-reveal" style="--sd:0.12s">
           <div class="step-top">
@@ -135,7 +208,7 @@
             <div class="step-line-el"></div>
           </div>
           <h3 class="step-title">We find your match.</h3>
-          <p class="step-body">Based on your needs, we connect you directly to the right organization or founder. Not a cold email to a stranger. A warm introduction to someone who already wants to hear from you.</p>
+          <p class="step-body">Not a cold email to a stranger. A warm introduction to someone who already wants to hear from you.</p>
         </div>
         <div class="step scroll-reveal" style="--sd:0.24s">
           <div class="step-top">
@@ -143,46 +216,30 @@
             <div class="step-line-el"></div>
           </div>
           <h3 class="step-title">You get to work.</h3>
-          <p class="step-body">A structured first call, one concrete thing to do together in the next 30 days, and a network behind you when you need more.</p>
+          <p class="step-body">A structured first call and one concrete thing to do together in the next 30 days.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- MARQUEE -->
-  <div class="marquee-section" aria-hidden="true">
-    <div class="marquee-track">
-      <span>Warm introductions</span><span class="mdot">&nbsp;&nbsp;—&nbsp;&nbsp;</span>
-      <span>Real connections</span><span class="mdot">&nbsp;&nbsp;—&nbsp;&nbsp;</span>
-      <span>Completely free</span><span class="mdot">&nbsp;&nbsp;—&nbsp;&nbsp;</span>
-      <span>Student founders</span><span class="mdot">&nbsp;&nbsp;—&nbsp;&nbsp;</span>
-      <span>80,000 people</span><span class="mdot">&nbsp;&nbsp;—&nbsp;&nbsp;</span>
-      <span>Warm introductions</span><span class="mdot">&nbsp;&nbsp;—&nbsp;&nbsp;</span>
-      <span>Real connections</span><span class="mdot">&nbsp;&nbsp;—&nbsp;&nbsp;</span>
-      <span>Completely free</span><span class="mdot">&nbsp;&nbsp;—&nbsp;&nbsp;</span>
-      <span>Student founders</span><span class="mdot">&nbsp;&nbsp;—&nbsp;&nbsp;</span>
-      <span>80,000 people</span><span class="mdot">&nbsp;&nbsp;—&nbsp;&nbsp;</span>
-    </div>
-  </div>
-
-  <!-- JOIN -->
+  <!-- JOIN: stagger-group for per-element reveal -->
   <section id="join">
     <div class="join-inner">
-      <div class="join-col scroll-reveal" style="--sd:0s">
-        <p class="section-label">FOR STUDENT FOUNDERS</p>
-        <h2 class="join-heading">Stop cold emailing strangers.</h2>
-        <p class="join-body">Venn gets you in the room with the right people, for free. Fill out the form and we will reach out within a week with your first introduction.</p>
-        <a class="join-btn" href="https://forms.gle/WHbpBagtNftHLYLF6" target="_blank" rel="noopener">
-          I run a student nonprofit.
+      <div class="join-col stagger-group">
+        <p class="section-label stagger-line">FOR STUDENT FOUNDERS</p>
+        <h2 class="join-heading stagger-line">Apply to join Venn.</h2>
+        <p class="join-body stagger-line">Get in the room with the right people, for free. We will reach out within a week with your first introduction.</p>
+        <a class="join-btn ext-link stagger-line" href="https://forms.gle/WHbpBagtNftHLYLF6" target="_blank" rel="noopener">
+          Get your first intro.
           <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1.5 9.5L9.5 1.5M9.5 1.5H3.5M9.5 1.5V7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
       </div>
-      <div class="join-col scroll-reveal" style="--sd:0.15s">
-        <p class="section-label">FOR ORGANIZATIONS</p>
-        <h2 class="join-heading">Connect with the next generation.</h2>
-        <p class="join-body">Tell us what you are working on and we will match you with a student org that complements your mission.</p>
-        <a class="join-btn" href="https://forms.gle/Qwu5eiVhTNuhVNpr7" target="_blank" rel="noopener">
-          I work with student nonprofits.
+      <div class="join-col stagger-group">
+        <p class="section-label stagger-line">FOR ORGANIZATIONS</p>
+        <h2 class="join-heading stagger-line">Connect with the next generation.</h2>
+        <p class="join-body stagger-line">Tell us what you are working on and we will match you with a student org that complements your mission.</p>
+        <a class="join-btn ext-link stagger-line" href="https://forms.gle/Qwu5eiVhTNuhVNpr7" target="_blank" rel="noopener">
+          Submit your org.
           <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1.5 9.5L9.5 1.5M9.5 1.5H3.5M9.5 1.5V7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
       </div>
@@ -192,18 +249,18 @@
   <!-- FOOTER -->
   <footer>
     <div class="footer-inner">
-      <a class="nav-logo" href="#hero" aria-label="Venn" style="opacity:0.55">
-        <svg width="72" height="22" viewBox="0 0 90 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="10" cy="14" r="10" fill="#2D5A3D"/>
-          <circle cx="18" cy="14" r="10" fill="#111111" fill-opacity="0.9"/>
-          <ellipse cx="14" cy="14" rx="4.2" ry="7.4" fill="#5A9E6F" fill-opacity="0.9"/>
-          <text x="34" y="19.5" font-family="Geist, sans-serif" font-weight="600" font-size="16" fill="#EDEAE4" letter-spacing="-0.03em">Venn</text>
+      <a class="nav-logo" href="#hero" aria-label="Venn" style="opacity:0.45">
+        <svg width="88" height="27" viewBox="0 0 112 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="13" cy="17" r="13" fill="#2D5A3D"/>
+          <circle cx="24" cy="17" r="13" fill="#111111" fill-opacity="0.92"/>
+          <ellipse cx="18.5" cy="17" rx="5.2" ry="9.1" fill="#5A9E6F" fill-opacity="0.92"/>
+          <text x="44" y="23.5" font-family="Geist, sans-serif" font-weight="600" font-size="19" fill="#EDEAE4" letter-spacing="-0.03em">Venn</text>
         </svg>
       </a>
       <p class="footer-text">Built by a student founder who needed this and could not find it.</p>
       <div class="footer-links">
-        <a href="https://forms.gle/WHbpBagtNftHLYLF6" target="_blank" rel="noopener">Join as founder</a>
-        <a href="https://forms.gle/Qwu5eiVhTNuhVNpr7" target="_blank" rel="noopener">Join as org</a>
+        <a href="https://forms.gle/WHbpBagtNftHLYLF6" class="ext-link" target="_blank" rel="noopener">Apply to join</a>
+        <a href="https://forms.gle/Qwu5eiVhTNuhVNpr7" class="ext-link" target="_blank" rel="noopener">Submit your org</a>
       </div>
     </div>
   </footer>
