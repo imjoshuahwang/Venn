@@ -336,7 +336,7 @@ nav.scrolled { border-bottom-color: var(--border-soft); }
 }
 .logo-item { display: flex; align-items: center; text-decoration: none; }
 .logo-item img {
-  max-height: 110px; width: auto;
+  max-height: 110px; max-width: 200px; width: auto;
   filter: brightness(0) invert(1);
   opacity: 0.75;
   transition: opacity 0.25s ease;
