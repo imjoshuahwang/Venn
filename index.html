@@ -59,33 +59,21 @@
       <div class="hero-orb hero-orb-2"></div>
     </div>
 
-    <div class="hero-grid">
-      <!-- TEXT COLUMN: reveal-up fires via JS after intro clears at 2.8s -->
-      <div class="hero-text-col">
-        <p class="villain-line reveal-up" style="--delay:0.05s">Most student founders spend months going nowhere.</p>
-        <p class="section-label reveal-up" style="--delay:0.13s">THE NONPROFIT CONNECTOR</p>
-        <h1 class="hero-headline">
-          <span class="h-line reveal-up" style="--delay:0.21s">The network that connects</span>
-          <span class="h-line reveal-up" style="--delay:0.29s">student nonprofits <em>to the world.</em></span>
-        </h1>
-        <p class="hero-body reveal-up" style="--delay:0.38s">
-          Warm introductions, real connections, completely free, across a network touching 87,500+ people and counting.
-        </p>
-        <div class="hero-links reveal-up" style="--delay:0.46s">
-          <a href="https://forms.gle/WHbpBagtNftHLYLF6" target="_blank" rel="noopener" class="hero-link ext-link">
-            <span>Get your first intro.</span>
-            <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1.5 9.5L9.5 1.5M9.5 1.5H3.5M9.5 1.5V7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-          <div class="hero-divider"></div>
-          <a href="https://forms.gle/Qwu5eiVhTNuhVNpr7" target="_blank" rel="noopener" class="hero-link ext-link">
-            <span>Apply as a partner.</span>
-            <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1.5 9.5L9.5 1.5M9.5 1.5H3.5M9.5 1.5V7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-        </div>
-      </div>
+    <!-- FULL-WIDTH HEADLINE -->
+    <div class="hero-head">
+      <p class="villain-line reveal-up" style="--delay:0.05s">Most student founders spend months going nowhere.</p>
+      <p class="section-label reveal-up" style="--delay:0.13s">THE NONPROFIT CONNECTOR</p>
+      <h1 class="hero-headline">
+        <span class="h-line reveal-up" style="--delay:0.21s">The network that connects</span>
+        <span class="h-line reveal-up" style="--delay:0.29s">student nonprofits <em>to the world.</em></span>
+      </h1>
+    </div>
 
-      <!-- VENN COLUMN: draws after intro clears -->
-      <div class="hero-venn-col">
+    <!-- VISUAL: centered Venn + 4 flowing text tracks -->
+    <div class="hero-visual reveal-up" style="--delay:0.38s">
+
+      <!-- Centered Venn -->
+      <div class="hero-venn-center">
         <svg class="hero-venn-svg" viewBox="0 0 480 420" xmlns="http://www.w3.org/2000/svg">
           <defs><clipPath id="hv-clip"><circle cx="190" cy="210" r="168"/></clipPath></defs>
           <circle class="hv-left"      cx="190" cy="210" r="168" fill="rgba(45,90,61,0.08)" stroke="#5A9E6F" stroke-width="1"/>
@@ -93,14 +81,51 @@
           <circle class="hv-intersect" cx="310" cy="210" r="168" fill="rgba(90,158,111,0.07)" clip-path="url(#hv-clip)"/>
         </svg>
       </div>
+
+      <!-- LEFT UPPER: student nonprofit types, flows rightward into left circle -->
+      <div class="flow-wrap flow-left flow-upper">
+        <div class="flow-inner"><span>Tech Education — STEM Outreach — Youth Advocacy — Arts Programs — Community Service — Civic Leadership — Environmental Work — Health Initiatives — Literacy Programs — Food Security — Mental Health Awareness — Cultural Exchange — Peer Mentorship — </span><span>Tech Education — STEM Outreach — Youth Advocacy — Arts Programs — Community Service — Civic Leadership — Environmental Work — Health Initiatives — Literacy Programs — Food Security — Mental Health Awareness — Cultural Exchange — Peer Mentorship — </span></div>
+      </div>
+
+      <!-- LEFT LOWER: more student types, flows rightward -->
+      <div class="flow-wrap flow-left flow-lower">
+        <div class="flow-inner flow-delayed"><span>After-School Tutoring — Youth Sports — Animal Welfare — Homelessness Outreach — Disaster Relief — Immigrant Support — Disability Advocacy — Workforce Training — Veteran Support — Women Empowerment — Anti-Bullying Campaigns — Crisis Counseling — Urban Farming — </span><span>After-School Tutoring — Youth Sports — Animal Welfare — Homelessness Outreach — Disaster Relief — Immigrant Support — Disability Advocacy — Workforce Training — Veteran Support — Women Empowerment — Anti-Bullying Campaigns — Crisis Counseling — Urban Farming — </span></div>
+      </div>
+
+      <!-- RIGHT UPPER: established orgs, flows leftward into right circle -->
+      <div class="flow-wrap flow-right-track flow-upper">
+        <div class="flow-inner flow-left-dir"><span>National Nonprofits — Public Libraries — Family Foundations — YMCA Chapters — Corporate Partners — Civic Organizations — Government Agencies — School Districts — Faith Communities — Healthcare Systems — Media Organizations — Research Institutes — Professional Associations — </span><span>National Nonprofits — Public Libraries — Family Foundations — YMCA Chapters — Corporate Partners — Civic Organizations — Government Agencies — School Districts — Faith Communities — Healthcare Systems — Media Organizations — Research Institutes — Professional Associations — </span></div>
+      </div>
+
+      <!-- RIGHT LOWER: more orgs, flows leftward -->
+      <div class="flow-wrap flow-right-track flow-lower">
+        <div class="flow-inner flow-left-dir flow-delayed"><span>Community Foundations — Tech Companies — Universities — Museums — Sports Leagues — Arts Councils — Labor Unions — Chamber of Commerce — Social Enterprises — Impact Investors — Think Tanks — Startup Accelerators — Neighborhood Councils — </span><span>Community Foundations — Tech Companies — Universities — Museums — Sports Leagues — Arts Councils — Labor Unions — Chamber of Commerce — Social Enterprises — Impact Investors — Think Tanks — Startup Accelerators — Neighborhood Councils — </span></div>
+      </div>
+
     </div>
 
-    <div class="hero-pulse-wrap reveal-up" style="--delay:0.56s">
+    <!-- BOTTOM: body + CTAs, centered -->
+    <div class="hero-bottom reveal-up" style="--delay:0.5s">
+      <p class="hero-body">Warm introductions, real connections, completely free, across a network touching 88,600+ people and counting.</p>
+      <div class="hero-links">
+        <a href="https://forms.gle/WHbpBagtNftHLYLF6" target="_blank" rel="noopener" class="hero-link ext-link">
+          <span>Get your first intro.</span>
+          <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1.5 9.5L9.5 1.5M9.5 1.5H3.5M9.5 1.5V7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <div class="hero-divider"></div>
+        <a href="https://forms.gle/Qwu5eiVhTNuhVNpr7" target="_blank" rel="noopener" class="hero-link ext-link">
+          <span>Apply as a partner.</span>
+          <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1.5 9.5L9.5 1.5M9.5 1.5H3.5M9.5 1.5V7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-pulse-wrap reveal-up" style="--delay:0.58s">
       <div class="pulse-line"></div>
       <div class="pulse-dot"></div>
     </div>
 
-    <div class="scroll-cue reveal-up" style="--delay:0.64s">
+    <div class="scroll-cue reveal-up" style="--delay:0.66s">
       <div class="scroll-line"></div>
     </div>
   </section>
@@ -150,19 +175,35 @@
   <section id="type-moment">
     <div class="type-inner scroll-reveal">
       <div class="type-panel">
-        <div class="type-names type-names-left">
-          <span>Hampton</span>
-          <span>YPO</span>
-          <span>Pavilion</span>
+
+        <!-- LEFT: big green text -->
+        <div class="type-left-col">
+          <span class="type-big">Free.</span>
+          <span class="type-big">And open.</span>
+          <p class="type-sub">Every other founder network has a price tag and a minimum age. This one doesn't.</p>
         </div>
-        <div class="type-center">
-          <span class="type-big">Free.<br>And open.</span>
-          <p class="type-sub">Every other founder network has a price tag<br>and a minimum age. This one doesn't.</p>
+
+        <!-- RIGHT: comparison table -->
+        <div class="compare-wrap">
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th class="th-feature"></th>
+                <th class="th-venn">Venn</th>
+                <th class="th-other">Other networks</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="compare-row"><td class="td-label">Cost</td><td class="td-venn">Free</td><td class="td-other">$3,000 – $15,000/yr</td></tr>
+              <tr class="compare-row"><td class="td-label">Age minimum</td><td class="td-venn">None</td><td class="td-other">25 – 40+</td></tr>
+              <tr class="compare-row"><td class="td-label">Open to students</td><td class="td-venn">Yes</td><td class="td-other">No</td></tr>
+              <tr class="compare-row"><td class="td-label">First intro in</td><td class="td-venn">&lt; 1 week</td><td class="td-other">Months</td></tr>
+              <tr class="compare-row"><td class="td-label">Built for</td><td class="td-venn">Founders right now</td><td class="td-other">Established executives</td></tr>
+            </tbody>
+          </table>
+          <p class="compare-note">Hampton — YPO — Pavilion — Entrepreneurs' Organization — Commsor</p>
         </div>
-        <div class="type-names type-names-right">
-          <span>Entrepreneurs'<br>Organization</span>
-          <span>Commsor</span>
-        </div>
+
       </div>
     </div>
   </section>
