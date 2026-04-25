@@ -106,32 +106,50 @@ document.querySelectorAll('.count').forEach(function (el) {
   countObs.observe(el);
 });
 
-// ─── TIMELINE: activate items + grow track fill ───
-var tlItems = document.querySelectorAll('.tl-item');
-var tlFill  = document.getElementById('tlFill');
+// ─── TIMELINE: section enters view → timed sequence, 3.5s per item ───
+var tlItems    = document.querySelectorAll('.tl-item');
+var tlFill     = document.getElementById('tlFill');
+var tlTriggered = false;
 
-function updateTrackFill() {
-  if (!tlFill) return;
-  var activeItems = document.querySelectorAll('.tl-item.tl-active');
-  if (!activeItems.length) { tlFill.style.height = '0'; return; }
-  var lastDot  = activeItems[activeItems.length - 1].querySelector('.tl-dot');
-  var track    = tlFill.parentElement;
-  if (!lastDot || !track) return;
-  var dotTop   = lastDot.getBoundingClientRect().top + window.scrollY;
-  var trackTop = track.getBoundingClientRect().top  + window.scrollY;
-  tlFill.style.height = Math.max(0, dotTop - trackTop + 5) + 'px';
+function activateTlItem(index) {
+  if (!tlItems[index]) return;
+  tlItems[index].classList.add('tl-active');
+  if (tlFill && tlFill.parentElement) {
+    var pct = (index + 1) / tlItems.length;
+    tlFill.style.height = (pct * tlFill.parentElement.offsetHeight) + 'px';
+  }
 }
 
-var tlObs = new IntersectionObserver(function (entries) {
-  entries.forEach(function (entry) {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('tl-active');
-      updateTrackFill();
-    }
+function startTlSequence() {
+  if (tlTriggered) return;
+  tlTriggered = true;
+  tlItems.forEach(function(_, i) {
+    setTimeout(function() { activateTlItem(i); }, i * 3500);
   });
-}, { threshold: 0.25 });
+}
 
-tlItems.forEach(function (item) { tlObs.observe(item); });
+var tlSectionObs = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) { startTlSequence(); tlSectionObs.unobserve(entry.target); }
+  });
+}, { threshold: 0.08 });
+
+var tlSection = document.getElementById('how-it-works');
+if (tlSection) tlSectionObs.observe(tlSection);
+
+// ─── COMPARE TABLE: rows slide in staggered ───
+var compareObs = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (!entry.isIntersecting) return;
+    entry.target.querySelectorAll('.compare-row').forEach(function(row, i) {
+      setTimeout(function() { row.classList.add('in-view'); }, i * 110);
+    });
+    compareObs.unobserve(entry.target);
+  });
+}, { threshold: 0.2 });
+
+var compareWrap = document.querySelector('.compare-wrap');
+if (compareWrap) compareObs.observe(compareWrap);
 
 // ─── EXIT FADE ON EXTERNAL LINKS ───
 var exitOverlay = document.getElementById('exit-overlay');
