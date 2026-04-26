@@ -550,3 +550,140 @@ footer::before {
   .type-big { font-size: clamp(72px, 22vw, 120px); }
   .join-heading { font-size: clamp(30px, 8vw, 48px); }
 }
+
+
+/* ── TYPE MOMENT: Free. And open. ───────────────────── */
+#type-moment {
+  padding: 120px 0 140px;
+  overflow: hidden;
+}
+
+.type-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+
+.type-panel {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.type-left-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.type-big {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(52px, 6vw, 88px);
+  font-weight: 800;
+  line-height: 1.05;
+  color: #5A9E6F;
+  letter-spacing: -0.02em;
+}
+
+.type-sub {
+  margin-top: 28px;
+  font-family: 'Geist', sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #A0A0A0;
+  max-width: 340px;
+}
+
+/* ── COMPARISON TABLE ───────────────────────────────── */
+.compare-wrap {
+  padding-top: 8px;
+}
+
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Geist', sans-serif;
+}
+
+.compare-table thead th {
+  padding: 0 20px 18px 0;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 500;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.th-feature {
+  color: transparent;
+  width: 38%;
+}
+
+.th-venn {
+  color: #5A9E6F;
+  text-align: left;
+  width: 28%;
+}
+
+.th-other {
+  color: #A0A0A0;
+  text-align: left;
+  width: 34%;
+}
+
+.compare-row {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.compare-row.row-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.compare-row td {
+  padding: 15px 20px 15px 0;
+  font-size: 14px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  vertical-align: middle;
+}
+
+.td-label {
+  color: #A0A0A0;
+  font-size: 13px;
+}
+
+.td-venn {
+  color: #EDEAE4;
+  font-weight: 500;
+}
+
+.td-other {
+  color: #555;
+}
+
+.compare-note {
+  margin-top: 20px;
+  font-family: 'Geist', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: #3A3A3A;
+}
+
+@media (max-width: 860px) {
+  .type-panel {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .type-inner {
+    padding: 0 24px;
+  }
+
+  #type-moment {
+    padding: 80px 0 100px;
+  }
+}
