@@ -166,3 +166,22 @@ document.querySelectorAll('.ext-link').forEach(function (link) {
     }
   });
 });
+
+// Compare table row reveal
+const compareRows = document.querySelectorAll('.compare-row');
+if (compareRows.length) {
+  const rowObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const rows = entry.target.querySelectorAll('.compare-row');
+        rows.forEach((row, i) => {
+          setTimeout(() => row.classList.add('row-visible'), i * 80);
+        });
+        rowObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  const table = document.querySelector('.compare-table');
+  if (table) rowObserver.observe(table);
+}
